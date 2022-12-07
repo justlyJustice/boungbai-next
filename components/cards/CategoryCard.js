@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import Image from "next/image";
 import Link from "next/link";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import styled from "styled-components";
 
 const CourseDiv = styled(Link)`
   background-color: white;
@@ -65,11 +65,11 @@ const CourseDiv = styled(Link)`
   }
 `;
 
-const CategoryCard = ({ name, img, to, ...otherProps }) => {
+const CategoryCard = ({ name, img, href, ...otherProps }) => {
   return (
-    <CourseDiv href={to} {...otherProps}>
+    <CourseDiv {...otherProps} href={href}>
       <div className="imageDiv">
-        <LazyLoadImage alt="Category Img" src={img} />
+        <Image alt="Category Img" src={img} width={100} height={100} />
       </div>
 
       <div className="text-contain">

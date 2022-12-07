@@ -2,17 +2,17 @@ import { Slide } from "react-reveal";
 
 import CoverSection from "components/CoverSection";
 import Head from "components/Head";
-import Layout from "components/Layout";
 
 import { webLogo } from "public/images";
+import webUrl from "config/webUrl";
 
 const Contact = () => {
   return (
-    <Layout>
+    <>
       <Head
         title="Boungbai | Contact"
         description="Feel free to reach out to us and let us know what you think of our services."
-        image={webLogo}
+        image={webUrl + webLogo}
       />
       <CoverSection headingText="Contact Us" span="Contact Us" />
 
@@ -35,7 +35,7 @@ const Contact = () => {
           </div>
         </section>
       </Slide>
-    </Layout>
+    </>
   );
 };
 

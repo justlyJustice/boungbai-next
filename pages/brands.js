@@ -3,10 +3,10 @@ import { useState } from "react";
 
 import CoverSection from "components/CoverSection";
 import Head from "components/Head";
-import Layout from "components/Layout";
 import { FirstModal, SecondModal, ThirdModal } from "components/BrandModal";
 
 import { webLogo } from "public/images";
+import webUrl from "config/webUrl";
 
 const Brands = () => {
   const [showFirstModal, setShowFirstModal] = useState(false);
@@ -14,18 +14,17 @@ const Brands = () => {
   const [showThirdModal, setShowThirdModal] = useState(false);
 
   return (
-    <Layout>
+    <>
       <CoverSection headingText="Our Brands" span="Brands" />
 
       <Head
         title="Boungbai | Our Brands"
         description="This is an annual contest among I.C.T talents to be awarded and encourage to stand tall in the world. It serves as a talent..."
-        image={webLogo}
+        image={webUrl + webLogo}
       />
 
       <section className="pages">
         <Fade cascade bottom>
-          {" "}
           <div className="brands-container">
             <div className=" brand-detail-wrapper wrapper1">
               <h2 className="brand-detail-title">
@@ -82,7 +81,7 @@ const Brands = () => {
       />
 
       <ThirdModal setShowModal={setShowThirdModal} showModal={showThirdModal} />
-    </Layout>
+    </>
   );
 };
 

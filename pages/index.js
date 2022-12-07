@@ -2,7 +2,6 @@ import Banner from "components/Banner";
 import InfoSection from "components/InfoSection";
 
 import Head from "components/Head";
-import Layout from "components/Layout";
 
 const Main = () => {
   /*  const [showModal, setShowModal] = useState(true);
@@ -14,7 +13,7 @@ const Main = () => {
   }, [showModal]); */
 
   return (
-    <Layout>
+    <>
       <Head
         title="Boungbai | Home"
         description="Boungbai Computers, a next level Software, Website Development, Cloud Computing, Artificial Intelligence and Ethical Hacking firm believes in constantly experimenting and inventing newer technologies and methodologies"
@@ -24,7 +23,7 @@ const Main = () => {
       <Banner />
       <InfoSection />
       {/*  <Modal showModal={showModal} setShowModal={setShowModal} /> */}
-    </Layout>
+    </>
   );
 };
 

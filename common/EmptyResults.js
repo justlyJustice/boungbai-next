@@ -22,7 +22,7 @@ const EmptyResults = () => {
       <LottieView
         className="animation"
         autoPlay
-        animationData={require("assets/animations/empty.json")}
+        animationData={require("public/animations/empty.json")}
         loop
       />
 

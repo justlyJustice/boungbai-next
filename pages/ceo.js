@@ -3,13 +3,12 @@ import { Fade, LightSpeed } from "react-reveal";
 
 import CoverSection from "components/CoverSection";
 import Head from "components/Head";
-import Layout from "components/Layout";
 
 import { ceoPic } from "public/images";
 
 const Ceo = () => {
   return (
-    <Layout>
+    <>
       <CoverSection headingText="The CEO" span="The CEO" />
 
       <Head
@@ -70,7 +69,7 @@ const Ceo = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

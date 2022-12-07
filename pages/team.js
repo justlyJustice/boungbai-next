@@ -6,19 +6,19 @@ import Head from "components/Head";
 import TeamMember from "components/TeamMember";
 
 import teamData from "data/team";
-import Layout from "components/Layout";
 
 import { webLogo } from "public/images";
+import webUrl from "config/webUrl";
 
 const Team = () => {
   return (
-    <Layout>
+    <>
       <CoverSection headingText="Boungbai Team" span="Boungbai Team" />
 
       <Head
         title="Boungbai | Team"
         description="Our staff with their unquestionable integrity and unwavering commitment make sure that every activity gets just the right kind of attention to be successful."
-        image={webLogo}
+        image={webUUrl + webLogo}
       />
 
       <section className="pages">
@@ -38,7 +38,7 @@ const Team = () => {
           </div>
         </Fade>
       </section>
-    </Layout>
+    </>
   );
 };
 

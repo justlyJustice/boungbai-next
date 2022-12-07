@@ -1,25 +1,22 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import Link from "next/link";
 import { usePaystackPayment } from "react-paystack";
 import { toast } from "react-toastify";
 
-import useUser from "hooks/useUser";
+/* import useUser from "hooks/useUser"; */
 import { verifyCoursePurchase } from "services/courseService";
 
 import publicKey from "config/publicKey";
 
 const PayStackIntegration = ({ course }) => {
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-  const { user } = useUser();
   let purchasedCourse;
 
-  console.log(user);
-
-  /* Check if user has purchased the `Course` */
-  if (user.savedCourses) {
-    purchasedCourse = user && user.savedCourses.find((id) => id === course._id);
-  }
+  let user = {
+    _id: 1,
+    name: "Justice Johnson",
+    email: "justlyjohn198@gmail.com",
+  };
 
   /* Paystack config */
   const config = {
@@ -41,7 +38,7 @@ const PayStackIntegration = ({ course }) => {
       alert(`Transaction successful!`);
 
       setTimeout(() => {
-        navigate("/dashboard");
+        window.location.href = "/dashboard";
       }, 4000);
     }
 

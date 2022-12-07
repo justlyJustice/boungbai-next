@@ -14,13 +14,7 @@ const TeamMember = ({ image, name, position, department }) => {
 
   return (
     <div className="team-member">
-      <Image
-        width={80}
-        height={100}
-        loading={`eager`}
-        src={images[image]}
-        alt={name + " Pic"}
-      />
+      <Image width={80} height={100} src={images[image]} alt={name + " Pic"} />
 
       <div className="title">
         <h5>{name}</h5>

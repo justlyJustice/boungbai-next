@@ -1,18 +1,18 @@
 import { Rotate } from "react-reveal";
 
 import Head from "components/Head";
-import Layout from "components/Layout";
 import CoverSection from "components/CoverSection";
 
 import { webLogo } from "public/images";
+import webUrl from "config/webUrl";
 
 const Services = () => {
   return (
-    <Layout>
+    <>
       <Head
         title="Boungbai | Services"
         description="We offer a wide range of servies withe following inclusive Software, Website Development, Cloud Computing, Artificial Intelligence and Ethical Hacking, App Development"
-        image={webLogo}
+        image={webUrl + webLogo}
       />
 
       <CoverSection headingText="Our Services" span="Services" />
@@ -64,7 +64,7 @@ const Services = () => {
           </div>
         </Rotate>
       </section>
-    </Layout>
+    </>
   );
 };
 
