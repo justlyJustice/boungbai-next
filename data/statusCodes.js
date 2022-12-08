@@ -7,7 +7,6 @@ const statusCodes = {
   CANCEL_ERROR: "Request has been cancelled.",
 };
 
-
 export const getStatus = (name) => {
   return statusCodes[name];
 };

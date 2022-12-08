@@ -1,11 +1,8 @@
 import Link from "next/link";
-/* import authService from "services/authService"; */
 
 export const AuthDropdown = ({ user }) => {
   const handleLogout = () => {
     authService.logout();
-
-    window.location = "/courses";
   };
 
   return (

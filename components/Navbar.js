@@ -3,12 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { webLogo } from "public/images";
-/* import useUser from "hooks/useUser"; */
+import { AuthDropdown } from "./AuthDropdown";
+
+import useUser from "hooks/useUser";
 /* import { AuthDropdown } from "./AuthDropdown"; */
 /* import useAdmin from "hooks/useAdmin"; */
 
 const Navbar = () => {
-  /* const { user } = useUser(); */
+  const { user } = useUser();
 
   return (
     <header>
@@ -107,7 +109,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              {/* <AuthDropdown user={user} /> */}
+              <AuthDropdown user={user} />
 
               <li className="nav-item">
                 <Link className="nav-link" href="/contact">

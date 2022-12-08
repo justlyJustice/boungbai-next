@@ -3,11 +3,15 @@ import Router from "next/router";
 import NProgress from "nprogress";
 
 import "../styles/globals.css";
+import "../styles/css/dashboard.css";
+import "../styles/css/admin.css";
 import "nprogress/nprogress.css";
 
 import "bootstrap/dist/css/bootstrap.css";
 import Layout from "components/Layout";
-/* import "bootstrap/dist/js/bootstrap"; */
+import { UserProvider } from "context/UserContext";
+import { AdminProvider } from "context/AdminContext";
+/* import "bootstrap/dist/js/bootstrap.min"; */
 
 function MyApp({ Component, pageProps }) {
   React.useEffect(() => {
@@ -27,9 +31,13 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AdminProvider>
+      <UserProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </UserProvider>
+    </AdminProvider>
   );
 }
 

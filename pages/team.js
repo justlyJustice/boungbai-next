@@ -18,7 +18,7 @@ const Team = () => {
       <Head
         title="Boungbai | Team"
         description="Our staff with their unquestionable integrity and unwavering commitment make sure that every activity gets just the right kind of attention to be successful."
-        image={webUUrl + webLogo}
+        image="/assets/images/web-logo.png"
       />
 
       <section className="pages">

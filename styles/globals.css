@@ -45,7 +45,7 @@ button {
 
 .account-container {
   background-image: linear-gradient(rgba(14, 112, 240, 0.8), rgb(4, 46, 161)),
-    url("../public/images/background.jpeg") !important;
+    url("/images/background.jpeg") !important;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;

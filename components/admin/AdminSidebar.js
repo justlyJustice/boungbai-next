@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
+
 /* import authService from "services/authService"; */
 
 const AdminSidebar = ({ showMenu, setShowMenu }) => {
@@ -9,7 +10,9 @@ const AdminSidebar = ({ showMenu, setShowMenu }) => {
     window.location = "/auth/admin";
   }; */
 
-  /*  return (
+  const handleLogout = () => {};
+
+  return (
     <div className={showMenu ? "overlay show" : "overlay"}>
       <div className="sidebar">
         <div className="img__div">
@@ -17,81 +20,79 @@ const AdminSidebar = ({ showMenu, setShowMenu }) => {
         </div>
         <div className="links__div">
           <div className="link__contain">
-            <NavLink
+            <Link
               className={({ isActive }) => (isActive ? "link active" : "link")}
-              href="/admin"
+              href="/dashboard"
             >
               <i className="fa-solid fa-shapes icon"></i>
               Dashboard
-            </NavLink>
+            </Link>
             <hr />
           </div>
           <div className="link__contain">
-            <NavLink
+            <Link
               className={({ isActive }) => (isActive ? "link active" : "link")}
               href="/upload/category"
             >
               <i className="fa-solid fa-draw-polygon icon"></i>
               Upload Category
-            </NavLink>
+            </Link>
             <hr />
           </div>
           <div className="link__contain">
-            <NavLink
+            <Link
               className={({ isActive }) => (isActive ? "link active" : "link")}
               href="/upload/course"
             >
               <i className="fa-solid fa-file-arrow-up icon"></i>
               Upload Course
-            </NavLink>
+            </Link>
             <hr />
           </div>
 
           <div className="link__contain">
-            <NavLink
+            <Link
               className={({ isActive }) => (isActive ? "link active" : "link")}
               href="/upload/video"
             >
               <i className="fa-solid fa-file-video icon"></i>
               Upload Video
-            </NavLink>
+            </Link>
             <hr />
           </div>
           <div className="link__contain">
-            <NavLink
+            <Link
               className={({ isActive }) => (isActive ? "link active" : "link")}
               href="/upload/post"
             >
               <i className="fa-solid fa-file-lines icon"></i>
               Upload Post
-            </NavLink>
+            </Link>
             <hr />
           </div>
           <div className="link__contain">
-            <NavLink
+            <Link
               className={({ isActive }) => (isActive ? "link active" : "link")}
               href="/users/manage"
             >
               <i className="fa-solid fa-users-rectangle icon"></i>
               Manage Users
-            </NavLink>
+            </Link>
             <hr />
           </div>
         </div>
 
         <div className="logoutDiv">
           <div>
-            <NavLink className="link" href="#" onClick={handleLogout}>
+            <Link className="link" href="#" onClick={handleLogout}>
               <i className="fa-solid fa-right-from-bracket icon"></i>
               Logout
-            </NavLink>
+            </Link>
           </div>
         </div>
       </div>
     </div>
-  ); */
-
-  return null;
+  );
 };
 
 export default AdminSidebar;
