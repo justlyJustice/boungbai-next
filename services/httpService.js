@@ -6,10 +6,6 @@ import url from "config/url";
 
 const apiClient = create({
   baseURL: url,
-  headers: {
-    "x-auth-token":
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjMyM2E0ODY5YzFkMTMyNjRhYTQ4NiIsIm5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AYm91bmdiYWkuY29tIiwic2F2ZWRDb3Vyc2VzIjpbXSwiaWF0IjoxNjYzNjg1OTMwfQ.EY1Un9rGXLhFxbx3CQM_UvuMjn4jOntrYmewDBs_tbU",
-  },
 });
 
 apiClient.axiosInstance.interceptors.response.use(null, (error) => {
@@ -30,7 +26,8 @@ apiClient.axiosInstance.interceptors.response.use(null, (error) => {
 });
 
 export const setJwt = (jwt) => {
-  apiClient.headers["x-auth-token"] = jwt;
+  apiClient.headers["x-auth-token"] =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjMyM2E0ODY5YzFkMTMyNjRhYTQ4NiIsIm5hbWUiOiJBZG1pbiIsImVtYWlsIjoiYWRtaW5AYm91bmdiYWkuY29tIiwic2F2ZWRDb3Vyc2VzIjpbXSwiaWF0IjoxNjYzNjg1OTMwfQ.EY1Un9rGXLhFxbx3CQM_UvuMjn4jOntrYmewDBs_tbU";
 };
 
 export default {

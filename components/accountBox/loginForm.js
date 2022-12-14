@@ -17,7 +17,7 @@ import { AccountContext } from "./accountContext";
 import { AppForm } from "../forms";
 
 import auth from "services/authService";
-import { logger } from "utils/logger";
+import useSubmit from "hooks/useSubmit";
 
 // Validation Schema
 const validationSchema = Yup.object().shape({
@@ -26,28 +26,11 @@ const validationSchema = Yup.object().shape({
 });
 
 export function LoginForm(props) {
+  const { submit: login, submitting: loading } = useSubmit(auth.login);
   const { switchToSignup } = useContext(AccountContext);
-  const [loading, setLoading] = useState(false);
 
-  const loginUser = async (values) => {
-    setLoading(true);
-    const res = await auth.login(values);
-    setLoading(false);
-
-    if (res.ok) {
-      toast.success("Login successful");
-
-      setTimeout(() => {
-        window.location = "/courses";
-      }, 6000);
-    }
-
-    if (!res.ok) {
-      setLoading(false);
-      toast.error(res.data.message);
-
-      return logger(res);
-    }
+  const loginUser = async (values, { resetForm }) => {
+    login(values, `/courses`, ``, resetForm);
   };
 
   return (

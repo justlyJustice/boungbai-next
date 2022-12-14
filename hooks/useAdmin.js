@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { AdminContext } from "../context/AdminContext";
+import { AdminContext } from "context/AdminContext";
 
 const useAdmin = () => {
-  const [admin, setAdmin] = useContext(AdminContext);
+  const { admin, setAdmin } = useContext(AdminContext);
 
   return { admin, setAdmin };
 };

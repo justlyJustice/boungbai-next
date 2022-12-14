@@ -21,8 +21,9 @@ const CoverSection = ({ headingText, span }) => {
         className="image"
         src={backgroundImage}
         alt="Background"
-        width={`100`}
+        width={100}
         height={100}
+        priority
       />
     </section>
   );

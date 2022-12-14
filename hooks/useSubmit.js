@@ -12,13 +12,13 @@ const useSubmit = (apiFunc) => {
   const [error, setError] = useState(false);
 
   const submit = async (
-    urlParam,
+    param,
     navigateTo,
     successMessage = `Success!`,
     resetForm
   ) => {
     setSubmitting(true);
-    const res = await apiFunc(urlParam);
+    const res = await apiFunc(param);
     setSubmitting(false);
 
     if (res.ok) {

@@ -344,7 +344,7 @@ textarea {
       rgba(10, 2, 2, 0.795),
       rgba(10, 2, 2, 0.795)
     ),
-    url("/public/assets/images/background.jpeg") !important;
+    url("/images/background.jpeg") !important;
   /*  background: rgba(10, 2, 2, 0.795); */
   display: flex;
   flex-direction: column;

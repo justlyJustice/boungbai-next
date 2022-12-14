@@ -4,20 +4,21 @@ import Head from "components/Head";
 
 import { webLogo } from "public/images";
 import webUrl from "config/webUrl";
+import Layout from "components/Layout";
 
 const Products = () => {
   return (
-    <>
+    <Layout>
       <Head
         title="Boungbai | Our Products"
-        description="MonitorMe. What is MonitorMe? MonitorMe is a web-app built out of the need to bridge trust between Project Host Communities, Contracting Firms and Project awarding Agencies/Institutes."
-        image={webUrl + webLogo}
+        description="Explore our outstanding products"
+        image="/images/web-logo.png"
       />
 
       <CoverSection headingText="Our Products" span="Products" />
 
       <ProductsSection />
-    </>
+    </Layout>
   );
 };
 

@@ -1,21 +1,19 @@
-/* eslint-disable eqeqeq */
-import { NavLink } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import Link from "next/link";
 
-import { userPng } from "assets/images";
+import { userPng } from "public/images";
 import useUser from "hooks/useUser";
-import useCourses from "hooks/useCourses";
+import Image from "next/image";
 
 const UserSidebar = ({ showSideBar, setShowSideBar }) => {
   const { user } = useUser();
-  const { courses } = useCourses();
+  /* const { courses } = useCourses();
 
   const userCourses =
     courses &&
     courses.filter(
       (course) =>
         course._id == user.savedCourses.map((savedCourse) => savedCourse)
-    );
+    ); */
 
   const handleLogout = () => {};
 
@@ -27,24 +25,21 @@ const UserSidebar = ({ showSideBar, setShowSideBar }) => {
       ></i>
 
       <div className="img__div">
-        <LazyLoadImage src={userPng} alt="User" />
+        <Image src={userPng} alt="User" width={100} />
       </div>
 
       <div className="links__div">
-        <NavLink
-          className={({ isActive }) => (isActive ? "link active" : "link")}
-          href="/dashboard"
-        >
+        <Link className="link" href="/user/courses">
           <i className="fa-solid fa-laptop-file icon"></i>
 
           <hr />
 
           <span> My Courses</span>
-        </NavLink>
+        </Link>
 
-        {userCourses &&
+        {/*  {userCourses &&
           userCourses.map((course) => (
-            <NavLink
+            <Link
               className={({ isActive }) => (isActive ? "link active" : "link")}
               key={course._id}
               href={`/user/courses/${course.slug}`}
@@ -54,12 +49,12 @@ const UserSidebar = ({ showSideBar, setShowSideBar }) => {
               <hr />
 
               <span> {course.name}</span>
-            </NavLink>
-          ))}
+            </Link>
+          ))} */}
       </div>
 
       <>
-        <NavLink
+        <Link
           className="logout-link text-white"
           onClick={handleLogout}
           href="#"
@@ -69,7 +64,7 @@ const UserSidebar = ({ showSideBar, setShowSideBar }) => {
           <span className="text-dark mx-2">
             <b>LOGOUT</b>
           </span>
-        </NavLink>
+        </Link>
       </>
     </div>
   );

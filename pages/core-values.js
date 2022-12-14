@@ -2,14 +2,15 @@ import { Zoom } from "react-reveal";
 import CoverSection from "components/CoverSection";
 
 import Head from "components/Head";
+import Layout from "components/Layout";
 
 const CoreValues = () => {
   return (
-    <>
+    <Layout>
       <Head
         title="Boungbai | Core Values"
         description="Core practices all those who are considered to be `a Boungbai` hold fast and stay adherent to."
-        image="/assets/images/web-logo.png"
+        image="/images/web-logo.png"
       />
 
       <CoverSection headingText="Core Values" span="Core Values" />
@@ -75,7 +76,7 @@ const CoreValues = () => {
           </Zoom>
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

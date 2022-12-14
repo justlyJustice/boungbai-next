@@ -1,14 +1,20 @@
 import { useState } from "react";
 import Link from "next/link";
 import AdminWrapper from "components/admin/AdminWrapper";
-import useAdmin from "hooks/useAdmin";
+
+import Head from "components/Head";
 
 const AdminDashboard = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const { admin } = useAdmin();
 
   return (
     <AdminWrapper showMenu={showMenu} setShowMenu={setShowMenu}>
+      <Head
+        title="Dashboard"
+        image="/images/web-logo.png"
+        description={`Manage courses`}
+      />
+
       <div className="side__content">
         <div className="side__top__contain">
           <div>
@@ -19,7 +25,7 @@ const AdminDashboard = () => {
           </div>
 
           <div className="text-contain">
-            <h2>Welcome, {admin.name}</h2>
+            <h2>Welcome Admin</h2>
             <p>Admin Dashboard</p>
           </div>
         </div>

@@ -15,7 +15,7 @@ export const AuthDropdown = ({ user }) => {
         aria-expanded="false"
         href="#"
       >
-        {user ? user.name : "Login"}
+        <>{user ? user.name : "Login"}</>
       </Link>
 
       <div

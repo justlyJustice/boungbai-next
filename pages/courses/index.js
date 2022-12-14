@@ -5,15 +5,15 @@ import { getCategories } from "services/categoryService";
 
 import CategoryCard from "components/cards/CategoryCard";
 
-import { webLogo } from "public/images";
+import Layout from "components/Layout";
 
 const Courses = ({ categories }) => {
   return (
-    <>
+    <Layout>
       <Head
         title="Boungbai | Our Courses"
         description="Explore all boungbai courses"
-        image={webLogo}
+        image={`/images/web-logo.png`}
       />
 
       <CoverSection headingText="Our Courses" span="Courses" />
@@ -43,7 +43,7 @@ const Courses = ({ categories }) => {
             ))}
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 

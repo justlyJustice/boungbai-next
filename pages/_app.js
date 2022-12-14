@@ -33,9 +33,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <AdminProvider>
       <UserProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Component {...pageProps} />
       </UserProvider>
     </AdminProvider>
   );

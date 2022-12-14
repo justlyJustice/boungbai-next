@@ -8,7 +8,7 @@ export const AdminProvider = ({ children }) => {
   const [admin, setAdmin] = useState(auth.adminUser);
 
   return (
-    <AdminContext.Provider value={[admin, setAdmin]}>
+    <AdminContext.Provider value={{ admin, setAdmin }}>
       {children}
     </AdminContext.Provider>
   );

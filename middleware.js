@@ -8,4 +8,8 @@ export default function middleware(req) {
   if (!verified && url.includes("/dashboard")) {
     return NextResponse.redirect("http://localhost:3000/");
   }
+
+  if (verified && url === "/auth/admin") {
+    return NextResponse.redirect("http://localhost:3000/dashboard");
+  }
 }

@@ -5,14 +5,15 @@ import Head from "components/Head";
 
 import { webLogo } from "public/images";
 import webUrl from "config/webUrl";
+import Layout from "components/Layout";
 
 const Contact = () => {
   return (
-    <>
+    <Layout>
       <Head
         title="Boungbai | Contact"
         description="Feel free to reach out to us and let us know what you think of our services."
-        image={webUrl + webLogo}
+        image="/images/web-logo.png"
       />
       <CoverSection headingText="Contact Us" span="Contact Us" />
 
@@ -35,7 +36,7 @@ const Contact = () => {
           </div>
         </section>
       </Slide>
-    </>
+    </Layout>
   );
 };
 

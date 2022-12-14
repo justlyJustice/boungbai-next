@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import { toast } from "react-toastify";
+import { useContext } from "react";
 import * as Yup from "yup";
 
 // Component Imports
@@ -17,8 +16,8 @@ import { AccountContext } from "./accountContext";
 import { AppForm } from "../forms";
 
 import { register } from "services/userService";
-import auth from "services/authService";
-import { logger } from "utils/logger";
+
+import useSubmit from "hooks/useSubmit";
 
 // Validation Schema
 const validationSchema = Yup.object().shape({
@@ -28,11 +27,12 @@ const validationSchema = Yup.object().shape({
 });
 
 export function SignupForm(props) {
+  const { submit: signUp, submitting: loading } = useSubmit(register);
   const { switchToSignin } = useContext(AccountContext);
-  const [loading, setLoading] = useState(false);
 
-  const signUpUser = async (user) => {
-    setLoading(true);
+  const signUpUser = async (user, { resetForm }) => {
+    signUp(user, `/courses`, ``, resetForm);
+    /*  setLoading(true);
     const res = await register(user);
     setLoading(false);
 
@@ -49,7 +49,7 @@ export function SignupForm(props) {
       setLoading(false);
       toast.error(res.data.message);
       return logger(res);
-    }
+    } */
   };
 
   return (

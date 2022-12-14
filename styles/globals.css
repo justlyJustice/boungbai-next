@@ -85,7 +85,7 @@ button {
 }
 
 .navbar-brand img {
-  /* width: 30%; */
+  width: 80px;
   object-fit: cover;
 }
 
@@ -1599,7 +1599,7 @@ footer .containerDiv .rightsDiv p {
   }
 
   .navbar-brand img {
-    width: 30px;
+    width: 80px;
     object-fit: cover;
     margin-left: -200px;
     margin-right: 100px;

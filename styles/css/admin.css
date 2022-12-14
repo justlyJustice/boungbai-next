@@ -108,8 +108,9 @@
 
 @media screen and (max-width: 768px) {
   .wrapper {
-    background-image: linear-gradient(rgba(14, 112, 240, 0.8), rgb(4, 46, 161)),
-      url("/images/background.jpeg");
+    background-color: white;
+    /* background-image: linear-gradient(rgba(14, 112, 240, 0.8), rgb(4, 46, 161)),
+      url("/images/background.jpeg"); */
     flex-direction: column;
   }
 
@@ -126,7 +127,12 @@
   }
 
   .left .text-div h2 {
+    color: rgba(4, 46, 161, 0.77);
     line-height: 0.4;
+  }
+
+  .left .text-div h3 {
+    color: rgba(2, 19, 66, 0.719);
   }
 
   .right .form__contain {
