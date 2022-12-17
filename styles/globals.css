@@ -7,6 +7,10 @@ body {
   box-sizing: border-box;
 }
 
+*:hover {
+  text-decoration: none !important;
+}
+
 #root {
   width: 100%;
   height: 100%;
@@ -787,7 +791,7 @@ footer .containerDiv .footer .logo-div {
   width: 40%;
 }
 
-footer .containerDiv .footerDiv .logo-div img {
+footer .containerDiv .footerDiv .logo-div .footer-img {
   width: 70%;
   margin: 50px 0px 0px 50px;
   max-width: 50%;

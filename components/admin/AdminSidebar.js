@@ -20,30 +20,23 @@ const AdminSidebar = ({ showMenu, setShowMenu }) => {
         </div>
         <div className="links__div">
           <div className="link__contain">
-            <Link
-              className={({ isActive }) => (isActive ? "link active" : "link")}
-              href="/dashboard"
-            >
+            <Link className="link active" href="/dashboard">
               <i className="fa-solid fa-shapes icon"></i>
               Dashboard
             </Link>
             <hr />
           </div>
+
           <div className="link__contain">
-            <Link
-              className={({ isActive }) => (isActive ? "link active" : "link")}
-              href="/upload/category"
-            >
+            <Link className="link" href="/upload/category">
               <i className="fa-solid fa-draw-polygon icon"></i>
               Upload Category
             </Link>
             <hr />
           </div>
+
           <div className="link__contain">
-            <Link
-              className={({ isActive }) => (isActive ? "link active" : "link")}
-              href="/upload/course"
-            >
+            <Link className="link" href="/upload/course">
               <i className="fa-solid fa-file-arrow-up icon"></i>
               Upload Course
             </Link>
@@ -51,30 +44,23 @@ const AdminSidebar = ({ showMenu, setShowMenu }) => {
           </div>
 
           <div className="link__contain">
-            <Link
-              className={({ isActive }) => (isActive ? "link active" : "link")}
-              href="/upload/video"
-            >
+            <Link className="link" href="/upload/video">
               <i className="fa-solid fa-file-video icon"></i>
               Upload Video
             </Link>
             <hr />
           </div>
+
           <div className="link__contain">
-            <Link
-              className={({ isActive }) => (isActive ? "link active" : "link")}
-              href="/upload/post"
-            >
+            <Link className="link" href="/upload/post">
               <i className="fa-solid fa-file-lines icon"></i>
               Upload Post
             </Link>
             <hr />
           </div>
+
           <div className="link__contain">
-            <Link
-              className={({ isActive }) => (isActive ? "link active" : "link")}
-              href="/users/manage"
-            >
+            <Link className="link" href="/users/manage">
               <i className="fa-solid fa-users-rectangle icon"></i>
               Manage Users
             </Link>

@@ -1,24 +1,14 @@
 import CoverSection from "components/CoverSection";
 import Head from "components/Head";
+import Layout from "components/Layout";
 
 import { getCategories, getCategory } from "services/categoryService";
 import CategoryCard from "components/cards/CategoryCard";
 import EmptyResults from "common/EmptyResults";
 
 const Category = ({ category }) => {
-  /*  const {
-    request: loadCategory,
-    data: { category },
-    loading,
-  } = apiResponse;
-  const { categoryName } = useParams(); */
-
-  /*   useEffect(() => {
-    loadCategory(categoryName);
-  }, []); */
-
   return (
-    <>
+    <Layout>
       <Head
         title={`Boungbai - ${category.name}`}
         description={category.description}
@@ -59,13 +49,14 @@ const Category = ({ category }) => {
           )}
         </div>
       </section>
-    </>
+    </Layout>
   );
 };
 
 export const getStaticPaths = async () => {
   const res = await getCategories();
   const { categories } = res.data;
+
   const categorySlugs = categories.map((category) => category.slug);
 
   const paths = categorySlugs.map((slug) => ({
@@ -84,8 +75,6 @@ export const getStaticProps = async (context) => {
   const res = await getCategory(context.params.categorySlug);
 
   const { category } = res.data;
-
-  console.log(category);
 
   return {
     props: {

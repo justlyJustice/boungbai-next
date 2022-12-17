@@ -1,15 +1,19 @@
-import { toast } from "react-toastify";
 import { NextResponse } from "next/server";
 
 export default function middleware(req) {
-  let verified = req.cookies.get("adminCookie");
+  let adminVerified = req.cookies.get("adminCookie");
+  let verifiedUser = req.cookies.get("userCookie");
   let url = req.url;
 
-  if (!verified && url.includes("/dashboard")) {
+  if (verifiedUser && url.includes("/auth/user")) {
+    return NextResponse.redirect("http://localhost:3000/courses");
+  }
+
+  if (!adminVerified && url.includes("/dashboard")) {
     return NextResponse.redirect("http://localhost:3000/");
   }
 
-  if (verified && url === "/auth/admin") {
+  if (adminVerified && url === "/auth/admin") {
     return NextResponse.redirect("http://localhost:3000/dashboard");
   }
 }

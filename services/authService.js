@@ -5,20 +5,19 @@ import Cookies from "js-cookie";
 import http from "./httpService";
 
 import storage from "utils/storage";
-import url from "config/url";
 
-const tokenKey = "token";
-const adminTokenKey = "admin";
+const userTokenKey = "userToken";
+const adminTokenKey = "adminToken";
 
 const getJwt = () => {
-  return storage.getItem(tokenKey || adminTokenKey);
+  return storage.getItem(userTokenKey);
 };
 
 http.setJwt(getJwt());
 
 const getCurrentUser = () => {
   try {
-    const jwt = storage.getItem(tokenKey);
+    const jwt = storage.getItem(userTokenKey);
     return jwtDecode(jwt);
   } catch (ex) {
     return null;
@@ -50,7 +49,7 @@ const login = async ({ email, password }) => {
 
     default:
       const jwt = response.data.token;
-      storage.setItem(tokenKey, jwt);
+      storage.setItem(userTokenKey, jwt);
       Cookies.set("userCookie", response.data.token);
       break;
   }
@@ -59,11 +58,11 @@ const login = async ({ email, password }) => {
 };
 
 export const loginWithJwt = (jwt) => {
-  storage.setItem(tokenKey, jwt);
+  storage.setItem(userTokenKey, jwt);
 };
 
 const logout = () => {
-  storage.removeItem(tokenKey);
+  storage.removeItem(userTokenKey);
 };
 
 export default {

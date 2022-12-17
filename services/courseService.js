@@ -1,13 +1,14 @@
 /* eslint-disable import/no-anonymous-default-export */
 import http from "./httpService";
 import { uploadConfig } from "config/uploadConfig";
+import url from "config/url";
 
 export const getCourses = () => {
-  return http.get("/courses");
+  return http.get(url + "/courses");
 };
 
 export const getCourse = (courseName) => {
-  return http.get(`/courses/${courseName}`);
+  return http.get(`${url}/courses/${courseName}`);
 };
 
 export const uploadCourse = (categoryId, course) => {
@@ -19,11 +20,13 @@ export const uploadCourse = (categoryId, course) => {
   formData.append("price", course.price);
   formData.append("description", course.description);
 
-  return http.post(`/${categoryId}/courses`, formData, uploadConfig);
+  return http.post(`${url}/${categoryId}/courses`, formData, uploadConfig);
 };
 
 export const verifyCoursePurchase = async (courseId, reference) => {
-  return await http.get(`/courses/${courseId}/verify?reference=${reference}`);
+  return await http.get(
+    `${url}/courses/${courseId}/verify?reference=${reference}`
+  );
 };
 
 export default {

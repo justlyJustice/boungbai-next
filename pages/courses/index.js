@@ -11,7 +11,7 @@ const Courses = ({ categories }) => {
   return (
     <Layout>
       <Head
-        title="Boungbai | Our Courses"
+        title="Boungbai - Our Courses"
         description="Explore all boungbai courses"
         image={`/images/web-logo.png`}
       />

@@ -10,7 +10,7 @@ const AdminDashboard = () => {
   return (
     <AdminWrapper showMenu={showMenu} setShowMenu={setShowMenu}>
       <Head
-        title="Dashboard"
+        title="Admin Dashboard"
         image="/images/web-logo.png"
         description={`Manage courses`}
       />

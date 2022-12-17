@@ -3,11 +3,11 @@ import Head from "components/Head";
 
 import { getCourse, getCourses } from "services/courseService";
 import PayStackIntegration from "components/PayStackIntegration";
-import { getCategories } from "services/categoryService";
+import Layout from "components/Layout";
 
 const CourseDetails = ({ course }) => {
   return (
-    <>
+    <Layout>
       <CoverSection headingText={course.name} span={`OUR COURSES`} />
 
       <>
@@ -50,41 +50,24 @@ const CourseDetails = ({ course }) => {
           <PayStackIntegration course={course} />
         </section>
       </>
-    </>
+    </Layout>
   );
 };
 
-export const getStaticPaths = async (context) => {
-  const res = await getCourses();
+export const getStaticPaths = async () => {
   const {
-    data: { categories },
-  } = await getCategories();
+    data: { courses },
+  } = await getCourses();
 
-  const { courses } = res.data;
-
-  const courseSlugs = courses.map((course) => course.slug);
-  const categorySlugs = categories.map((category) => category.slug);
-
-  const paths = categorySlugs.map((categorySlug) => {
-    return courseSlugs.map((courseSlug) => {
-      return {
-        params: {
-          courseSlug,
-          categorySlug,
-        },
-      };
-    });
-  });
+  const paths = courses.map((course) => ({
+    params: {
+      categorySlug: course.category.slug,
+      courseSlug: course.slug,
+    },
+  }));
 
   return {
-    paths: [
-      {
-        params: {
-          courseSlug: `css`,
-          categorySlug: `web-development-and-hosting`,
-        },
-      },
-    ],
+    paths,
     fallback: false,
   };
 };

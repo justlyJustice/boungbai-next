@@ -1,8 +1,8 @@
 import { LightSpeed, Roll } from "react-reveal";
 import Link from "next/link";
+import Image from "next/image";
 
 import { webLogo } from "public/images";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Footer = () => {
   return (
@@ -10,7 +10,13 @@ const Footer = () => {
       <div className="containerDiv">
         <div className="footerDiv">
           <div className="logo-div">
-            <LazyLoadImage src={webLogo} alt="Web Logo" />
+            <Image
+              className="footer-img"
+              src={webLogo}
+              alt="Web Logo"
+              width={100}
+              height={100}
+            />
           </div>
 
           <div className="nav-div">

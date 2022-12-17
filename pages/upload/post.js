@@ -2,6 +2,7 @@ import { useState } from "react";
 import AdminWrapper from "components/admin/AdminWrapper";
 
 import { uploadPost } from "services/postService";
+import Head from "components/Head";
 
 const UploadPost = () => {
   const [loading, setLoading] = useState(false);
@@ -44,10 +45,25 @@ const UploadPost = () => {
 
   return (
     <AdminWrapper>
+      <Head
+        title={`Dashboard - Post Upload`}
+        description={`Manage existing, and upload blog posts`}
+        image={`/images/web-logo.png`}
+      />
+
       <div className="side__content">
-        <div className="side__text__contain">
-          <h2>Welcome, Admin</h2>
-          <p>Manage existing, and upload blog posts</p>
+        <div className="side__top__contain">
+          <div>
+            <i
+              className="fa-solid fa-bars vertical toggle-icon"
+              onClick={() => setShowMenu(true)}
+            ></i>
+          </div>
+
+          <div className="text-contain">
+            <h2>Welcome Admin</h2>
+            <p>Manage existing, and upload blog posts</p>
+          </div>
         </div>
 
         <div className="form__contain">
