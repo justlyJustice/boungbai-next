@@ -1,6 +1,19 @@
-import { Formik } from "formik";
+import { Formik, FormikHandlers, FormikValues } from "formik";
+import { SchemaObjectDescription, ValidateOptions } from "yup";
 
-const AppForm = ({ children, initialValues, onSubmit, validationSchema }) => {
+type Props = {
+  children: React.ReactNode;
+  initialValues: FormikValues;
+  onSubmit: (values: FormikValues) => void;
+  validationSchema: SchemaObjectDescription;
+};
+
+const AppForm = ({
+  children,
+  initialValues,
+  onSubmit,
+  validationSchema,
+}: Props) => {
   return (
     <Formik
       initialValues={initialValues}

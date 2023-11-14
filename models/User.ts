@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import { SignJWT } from "jose";
-// import jwt from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema(
   {
@@ -42,26 +41,20 @@ userSchema.methods.generateAuthToken = async function () {
   const secret = new TextEncoder().encode(
     "cc7e0d44fd473002f1c42167459001140ec6389b7353f8088f4d9a95f2f596f2"
   );
-  const alg = "HS256";
 
   const token = await new SignJWT({
-    _id: this._id,
+    id: this.id,
     name: this.name,
     email: this.email,
     isAdmin: this.isAdmin,
     savedCourses: this.savedCourses,
   })
-    .setProtectedHeader({ alg })
-    .setIssuedAt()
-    .setIssuer("urn:example:issuer")
-    .setAudience("urn:example:audience")
-    .setExpirationTime("2h")
+    .setProtectedHeader({ alg: "HS256" }) // Specify the algorithm
+    .setIssuedAt() // Set the issued at time
+    .setExpirationTime("1h") // Set the expiration time
     .sign(secret);
-
-  // const token = new jose.SignJWT({);
-
-  // jwt.sign(
-
+  // const token = jwt.sign(
+  //   ,
   //   process.env.JWT_KEY!
   // );
   return token;

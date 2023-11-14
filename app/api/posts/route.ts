@@ -1,4 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
+import path from "path";
+
 import Post from "@/models/Post";
 import connectDB from "@/lib/connectDb";
 

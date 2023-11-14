@@ -3,7 +3,22 @@ import { useFormikContext } from "formik";
 // Component Imports
 import FormError from "./FormError";
 
-const Input = ({ name, className, label, labelStyle, ...otherprops }) => {
+type Props = {
+  name: string;
+  className: string;
+  label?: string;
+  labelStyle?: object;
+  placeholder?: string;
+  otherprops?: any;
+};
+
+const Input = ({
+  name,
+  className,
+  label,
+  labelStyle,
+  ...otherprops
+}: Props) => {
   const { errors, touched, values, setFieldValue } = useFormikContext();
 
   return (
@@ -17,8 +32,8 @@ const Input = ({ name, className, label, labelStyle, ...otherprops }) => {
       <input
         name={name}
         /*  onBlur={() => setFieldTouched(name)} */
-        onChange={({ target: { value } }) => setFieldValue(name, value)}
-        value={values[name]}
+        // onChange={({ target: { value } }) => setFieldValue(name, value)}
+        // value={values[name]}
         className={className}
         id={name}
         {...otherprops}

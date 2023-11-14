@@ -3,6 +3,7 @@ import { useFormikContext } from "formik";
 type Props = {
   className: string;
   children: React.ReactNode;
+  otherProps?: string;
 };
 
 const SubmitButton = ({ className, children, ...otherProps }: Props) => {
