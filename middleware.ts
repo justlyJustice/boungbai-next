@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { jwtVerify } from "jose";
+
+import connectDB from "./lib/connectDb";
 
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname.includes("/api")) {
+    await connectDB();
+  }
+
   const auth = request.headers.get("authorization");
   const jwtToken = auth?.split(" ")[1];
-
-  // const token = await jwt.verify(jwtToken!, process.env.SECRET_KEY!);
-
-  // console.log("token", token);
 
   if (!jwtToken)
     return NextResponse.json(
@@ -20,33 +21,7 @@ export async function middleware(request: NextRequest) {
       { status: 401 }
     );
 
-  const secret = new TextEncoder().encode(
-    "cc7e0d44fd473002f1c42167459001140ec6389b7353f8088f4d9a95f2f596f2"
-  );
-
-  const verified = await jwtVerify(jwtToken, secret, {
-    algorithms: ["HS256"], // Specify the algorithm
-  });
-
-  console.log(verified);
-
-  // const secret = new TextEncoder().encode(
-  //   "cc7e0d44fd473002f1c42167459001140ec6389b7353f8088f4d9a95f2f596f2"
-  // );
-
-  // const { payload, protectedHeader } = await jwtVerify(jwtToken, secret, {
-  //   issuer: "urn:example:issuer",
-  //   audience: "urn:example:audience",
-  // });
-
-  // console.log(payload);
-  // console.log(protectedHeader);
-
   return NextResponse.next();
-
-  // if (request.nextUrl.pathname === "/api/users" && request.method === "GET") {
-  //   return NextResponse.next();
-  // }
 }
 
 // See "Matching Paths" below to learn more

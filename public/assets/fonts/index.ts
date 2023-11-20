@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 
-const poppins = localFont({
+export const poppins = localFont({
   src: [
     {
       path: "./poppins/Poppins-Regular.ttf",
@@ -39,5 +39,3 @@ const poppins = localFont({
     },
   ],
 });
-
-export default { poppins };

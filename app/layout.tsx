@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Poppins } from "next/font/google";
 
+import { poppins } from "@/public/assets/fonts";
 import Navbar from "../ui/common/Navbar";
 import Footer from "../ui/common/Footer";
 
@@ -10,11 +9,6 @@ import "./styles/admin.css";
 import "./styles/all-styles.css";
 import "./styles/blog.css";
 import "./styles/dashboard.css";
-
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin", "latin-ext"],
-});
 
 export const metadata: Metadata = {
   title: "Boungbai Computers Netware Ltd.",

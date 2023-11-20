@@ -1,4 +1,5 @@
 import CoverSection from "@/ui/common/Cover";
+import CorporateInfo from "@/ui/corporate-overview/Info";
 
 export default function CorporateOverviewPage() {
   return (
@@ -7,6 +8,8 @@ export default function CorporateOverviewPage() {
         headingText="Corporate Overview"
         span="Corporate Overview"
       />
+
+      <CorporateInfo />
     </>
   );
 }
