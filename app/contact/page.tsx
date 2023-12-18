@@ -1,4 +1,10 @@
+import { MapIcon } from "@heroicons/react/20/solid";
 import CoverSection from "../../ui/common/Cover";
+import {
+  EnvelopeIcon,
+  MapPinIcon,
+  DevicePhoneMobileIcon,
+} from "@heroicons/react/24/solid";
 
 export default function ContactPage() {
   return (
@@ -7,7 +13,10 @@ export default function ContactPage() {
 
       <section className="info">
         <div className="content">
-          <i className="fa-solid fa-location"></i>
+          <MapPinIcon className="icon" />
+
+          {/* <i className="fa-solid fa-location"></i> */}
+
           <p>
             No 30 Ebis Mechanic Road, Opposite Sonia Estate, Amarata, Yenagoa,
             Bayelsa State.
@@ -15,12 +24,14 @@ export default function ContactPage() {
         </div>
 
         <div className="content">
-          <i className="fa-solid fa-phone"></i>
+          <DevicePhoneMobileIcon className="icon" />
+          {/* <i className="fa-solid fa-phone"></i> */}
           <p>+234 (0) 7025424338</p>
         </div>
 
         <div className="content">
-          <i className="fa-solid fa-envelope"></i>
+          <EnvelopeIcon className="icon" />
+          {/* <i className="fa-solid fa-envelope"></i> */}
           <p>info@boungbai.com</p>
         </div>
       </section>

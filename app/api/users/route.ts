@@ -3,9 +3,9 @@ import User from "@/models/User";
 import connectDB from "@/lib/connectDb";
 
 export const GET = async (req: NextRequest, res: NextResponse) => {
-  await connectDB();
+  // await connectDB();
 
-  const users = await User.find();
+  // const users = await User.find();
 
-  return NextResponse.json(users);
+  return NextResponse.json("users");
 };

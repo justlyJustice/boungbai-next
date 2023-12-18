@@ -1,6 +1,6 @@
 import CoverSection from "@/ui/common/Cover";
 import TeamMember from "@/ui/team/TeamMember";
-import team from ".";
+import team from "./";
 
 export default function TeamPage() {
   return (
@@ -16,6 +16,7 @@ export default function TeamPage() {
                 image={member.image}
                 position={member.position}
                 department={member.department}
+                key={i}
               />
             ))}
           </div>

@@ -4,14 +4,15 @@ import { poppins } from "@/public/assets/fonts";
 import Navbar from "../ui/common/Navbar";
 import Footer from "../ui/common/Footer";
 
+import "material-icons/iconfont/material-icons.css";
 import "./globals.css";
-import "./styles/admin.css";
+// import "./styles/admin.css";
 import "./styles/all-styles.css";
-import "./styles/blog.css";
-import "./styles/dashboard.css";
+// import "./styles/blog.css";
+// import "./styles/dashboard.css";
 
 export const metadata: Metadata = {
-  title: "Boungbai Computers Netware Ltd.",
+  title: "Boungbai | Home",
   description: "",
   keywords: [
     "Elder Paris Oyeinnoah Digifa",
@@ -43,8 +44,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar />
+        {/* <Navbar /> */}
+
         {children}
+
         <Footer />
       </body>
     </html>

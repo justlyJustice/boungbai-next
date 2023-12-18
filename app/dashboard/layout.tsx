@@ -1,13 +1,15 @@
-import Sidebar from "@/ui/admin/Sidebar";
+import SideNav from "@/ui/admin/SideNav";
 import { Props } from "@/types/layout";
 
-export default function DashboardLayout({ children }: Props) {
+function Layout({ children }: Props) {
   return (
     <section className="dashboard__section">
       {/* <AdminSidebar showMenu={showMenu} setShowMenu={setShowMenu} /> */}
-      <Sidebar />
+      <SideNav />
 
       {children}
     </section>
   );
 }
+
+export default Layout;

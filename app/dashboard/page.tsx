@@ -12,30 +12,45 @@ export default function Dashboard() {
         </div>
 
         <div className="text-contain">
-          <h2>Welcome, </h2>
-          <p>Admin Dashboard</p>
+          <h2>Welcome, Admim</h2>
         </div>
       </div>
 
       <div className="cards">
-        <Link className="card" href={`/upload/video`}>
-          <i className="fa-solid fa-file-video"></i>
-          <h4>Upload Video</h4>
-        </Link>
+        <Link className="small-card big" href={`/dashboard/upload-category`}>
+          <div className="card-icon">
+            <i className="fa-solid fa-file-video"></i>
+          </div>
 
-        <Link className="card" href={`/upload/category`}>
-          <i className="fa-solid fa-draw-polygon"></i>
           <h4>Upload Category</h4>
         </Link>
 
-        <Link className="card" href={`/upload/course`}>
-          <i className="fa-solid fa-file-upload"></i>
-          <h4>Upload Course</h4>
+        <Link className="small-card" href={`/upload/video`}>
+          <div className="card-icon">
+            <i className="fa-solid fa-file-video"></i>
+          </div>
+          <h4>Upload Video</h4>
         </Link>
 
-        <Link className="card" href={`/upload/post`}>
-          <i className="fa-solid fa-file-lines"></i>
-          <h4>Upload Post</h4>
+        <Link className="small-card" href={`/upload/video`}>
+          <div className="card-icon">
+            <i className="fa-solid fa-file-video"></i>
+          </div>
+          <h4>Upload Video</h4>
+        </Link>
+
+        <Link className="small-card" href={`/upload/video`}>
+          <div className="card-icon">
+            <i className="fa-solid fa-file-video"></i>
+          </div>
+          <h4>Upload Video</h4>
+        </Link>
+
+        <Link className="small-card" href={`/upload/video`}>
+          <div className="card-icon">
+            <i className="fa-solid fa-file-video"></i>
+          </div>
+          <h4>Upload Video</h4>
         </Link>
       </div>
     </div>

@@ -3,6 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 import Category from "@/models/Category";
 import connectDB from "@/lib/connectDb";
 
+export const generateStaticParams = () => {
+  const slugs = ["html", "css"];
+  return slugs.map((slug) => ({ categoryId: slug }));
+};
+
 // @DESC    Get a category
 // @ROUTE   /api/categories/category-name
 // @ACCESS  Private

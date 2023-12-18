@@ -1,27 +1,34 @@
+import {
+  adakaPic,
+  clarkPic,
+  emmaPic,
+  victoryPic,
+} from "@/public/assets/images";
+
 const team = [
   {
     name: "Abraham Emmanuel",
     position: "Manager & Lead",
     department: "Web Development",
-    image: "emma",
+    image: emmaPic,
   },
   {
     name: "Preye A. Benneth",
     position: "Lead",
     department: "Penetration Testing",
-    image: "clark",
+    image: clarkPic,
   },
   {
     name: "Victory Samuel",
     position: "Lead",
     department: "Mobile App Development",
-    image: "victory",
+    image: victoryPic,
   },
   {
     name: "Adaka Igoniowei",
     position: "Lead",
     department: "Software Development",
-    image: "adaka",
+    image: adakaPic,
   },
 ];
 

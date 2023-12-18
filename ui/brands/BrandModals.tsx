@@ -112,7 +112,7 @@ interface PropTypes {
 export const FirstModal = ({ showModal, setShowModal }: PropTypes) => {
   const modalRef = useRef();
 
-  const hideModal = (e: MouseEvent) => {
+  const hideModal = (e: any) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }
@@ -127,7 +127,7 @@ export const FirstModal = ({ showModal, setShowModal }: PropTypes) => {
       {showModal ? (
         <Background
           ref={modalRef}
-          onClick={(e) => hideModal(e)}
+          onClick={hideModal}
           style={{ overflowY: "scroll" }}
         >
           <ModalWrapper>
@@ -168,7 +168,7 @@ export const FirstModal = ({ showModal, setShowModal }: PropTypes) => {
 export const SecondModal = ({ showModal, setShowModal }: PropTypes) => {
   const modalRef = useRef<HTMLDivElement>();
 
-  const hideModal = (e: Event) => {
+  const hideModal = (e: any) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }
@@ -224,7 +224,7 @@ export const ThirdModal = ({ showModal, setShowModal }: PropTypes) => {
   //   transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
   // });
 
-  const hideModal = (e: Event) => {
+  const hideModal = (e: any) => {
     if (modalRef.current === e.target) {
       setShowModal(false);
     }

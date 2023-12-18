@@ -10,6 +10,7 @@ type Props = {
   labelStyle?: object;
   placeholder?: string;
   otherprops?: any;
+  type?: string;
 };
 
 const Input = ({

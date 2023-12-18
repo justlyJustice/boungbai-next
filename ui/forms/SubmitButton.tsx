@@ -13,7 +13,7 @@ const SubmitButton = ({ className, children, ...otherProps }: Props) => {
     <button
       type="submit"
       className={className}
-      onClick={handleSubmit}
+      // onSubmitCapture={handleSubmit}
       {...otherProps}
     >
       {children}

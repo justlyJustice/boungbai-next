@@ -23,10 +23,23 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
 // @ROUTE   /api/categories
 // @ACCESS  Private
 
-const createCategory = async (req: NextRequest, res: NextResponse) => {
-  const body = await req.formData();
-
+export const POST = async (req: NextRequest, res: NextResponse) => {
   await connectDB();
+
+  const body = (await req.json()) as { name: string; image: string };
+
+  if (!body.name && !body.image)
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Invalid request! Must provide name and image for category",
+      },
+      { status: 400 }
+    );
+
+  const category = await Category.create(body);
+
+  return NextResponse.json({ success: true, data: category }, { status: 201 });
 
   // let category = new Category({
   //   name: body.name,
@@ -44,4 +57,4 @@ const createCategory = async (req: NextRequest, res: NextResponse) => {
   // });
 };
 
-export const POST = handler(createCategory);
+// export const POST = handler(createCategory);

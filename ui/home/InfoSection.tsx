@@ -41,7 +41,7 @@ const InfoSection = () => {
             <div className="serviceDiv">
               <div>
                 <i className="material-icons">lock_open</i>
-                <h5>Penetration Testing</h5>
+                <h5>CyberSecurity</h5>
               </div>
             </div>
           </div>

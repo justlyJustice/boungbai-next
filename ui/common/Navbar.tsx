@@ -1,7 +1,8 @@
 "use client";
 
 import "bootstrap/dist/css/bootstrap.css";
-// import "bootstrap/dist/js/bootstrap.bundle";
+import "bootstrap/dist/js/bootstrap.bundle";
+import "jquery/dist/jquery";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -87,11 +88,11 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" href="/blog">
                   Blog
                 </Link>
-              </li>
+              </li> */}
 
               <li className="nav-item">
                 <Link className="nav-link" href="/brands">
@@ -104,6 +105,12 @@ const Navbar = () => {
                   Products
                 </Link>
               </li>
+
+              {/* <li className="nav-item">
+                <Link className="nav-link" href="/media-gallery">
+                  Gallery
+                </Link>
+              </li> */}
 
               <li className="nav-item">
                 <Link className="nav-link" href="/courses">
